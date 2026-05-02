@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\roman\\\\Documents\\\\Soeren\\\\mindora-react-flow2-main\\\\src\" -Recurse | Select-Object FullName, PSIsContainer | ForEach-Object { $_.FullName -replace [regex]::Escape\\(\"C:\\\\Users\\\\roman\\\\Documents\\\\Soeren\\\\mindora-react-flow2-main\\\\\"\\), \"\" } | Sort-Object)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\roman\\\\Documents\\\\Soeren\\\\mindora-react-flow2-main\" -Name | Where-Object { $_ -match '^\\\\.' -and $_ -ne '.git' -and $_ -ne '.vite' } | Sort-Object)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\roman\\\\Documents\\\\Soeren\\\\mindora-react-flow2-main\" -Name | Where-Object { $_ -iMatch '\\(docker|dockerfile|docker-compose|\\\\.env|\\\\.env\\\\.example|setup\\)' })",
+      "PowerShell(Get-Command *)",
+      "PowerShell(winget *)",
+      "PowerShell(npm *)",
+      "PowerShell(npm run *)",
+      "PowerShell(Start-Sleep -Seconds 5; $content = Get-Content \"C:\\\\Users\\\\roman\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-roman-Documents-Soeren-mindora-react-flow2-main\\\\5d493aa5-7614-484a-b7d0-279e2fcd9850\\\\tasks\\\\b53mie8av.output\" -Raw; $content.Length; $content.Substring\\([Math]::Max\\(0, $content.Length - 1000\\)\\))",
+      "PowerShell($env:PATH = \"C:\\\\Program Files\\\\nodejs;$env:PATH\"; & \"C:\\\\Program Files\\\\nodejs\\\\npm.cmd\" run dev)",
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(chmod +x /home/roman/Documents/soeren/mindora-react-flow2-main/node_modules/.bin/vite)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173)",
+      "Read(//usr/bin/**)",
+      "Read(//usr/local/bin/**)",
+      "PowerShell(Get-Process *)",
+      "PowerShell(node --check src/components/courseOverview/levelLayout.js)",
+      "PowerShell(Remove-Item *)",
+      "PowerShell(node --check src/components/courseOverview/levelLayout.js; node --check src/components/courseOverview/Edges/Edges.jsx 2>&1; Write-Output \"---\"; npx --no-install esbuild --bundle src/components/courseOverview/CourseOverviewFlowCanvas.jsx --outfile=NUL --loader:.jsx=jsx --jsx=automatic --external:react --external:react-dom --external:@xyflow/react --log-level=warning 2>&1 | Select-Object -First 30)",
+      "PowerShell(if \\(Test-Path package.json\\) { \\(Get-Content package.json -Raw | ConvertFrom-Json\\).scripts.PSObject.Properties | Select-Object Name, Value | Format-Table -AutoSize | Out-String -Width 200 })",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:5173/mindora-react-flow2/\" -UseBasicParsing -TimeoutSec 5; Write-Output \"Status: $\\($r.StatusCode\\)\"; Write-Output \"Length: $\\($r.RawContentLength\\)\" } catch { Write-Output \"ERROR: $_\" })",
+      "PowerShell(Get-ChildItem -File | Where-Object { $_.Extension -in '.png','.jpg','.jpeg','.gif','.webp' } | Sort-Object LastWriteTime -Descending | Select-Object Name, LastWriteTime, Length | Format-Table -AutoSize; Write-Output \"---\"; Get-ChildItem -Recurse -File -Depth 1 | Where-Object { $_.Extension -in '.png','.jpg','.jpeg','.gif','.webp' -and $_.LastWriteTime -gt \\(Get-Date\\).AddDays\\(-2\\) } | Select-Object FullName, LastWriteTime | Format-Table -AutoSize)"
+    ]
+  }
+}
