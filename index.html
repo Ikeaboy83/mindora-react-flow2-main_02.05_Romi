@@ -2,11 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/mindora-react-flow2-main_02.05_Romi/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/mindora-react-flow2/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- DM Sans wird in der gesamten Course-Overview gerendert. Loading-Strategie:
+         - rel="preload" as="style": Fonts-CSS wird parallel zum HTML-Parsing
+           geholt, damit die woff2-Anfrage ~100-300 ms früher startet und das
+           FOUT-Fenster (Flash-of-Unstyled-Text) so klein wie möglich bleibt.
+         - display=block (statt swap): Browser zeigt während des Loadings GAR
+           KEINEN Text statt eines Fallback-Schnitts. Damit gibt es keinen
+           Mid-Stream-Swap zwischen Segoe-UI-Fallback und DM Sans, der unter
+           React Flow's transform: scale() als zwei sichtbar unterschiedliche
+           Schnitte beim Zoomen erscheint. Maximales Block-Fenster ist 3 s;
+           danach würde der Browser auf Fallback gehen — bei Google Fonts
+           realistisch nie erreicht. -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=block"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=block"
+    />
     <title>Vite + React</title>
-    <script type="module" crossorigin src="/mindora-react-flow2-main_02.05_Romi/assets/index-DrimvtIR.js"></script>
-    <link rel="stylesheet" crossorigin href="/mindora-react-flow2-main_02.05_Romi/assets/index-D5cNMzC8.css">
+    <script type="module" crossorigin src="/mindora-react-flow2/assets/index-DNvebvz8.js"></script>
+    <link rel="stylesheet" crossorigin href="/mindora-react-flow2/assets/index-DtAMhj5V.css">
   </head>
   <body>
     <div id="root"></div>
