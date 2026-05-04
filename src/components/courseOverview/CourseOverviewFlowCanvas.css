@@ -1,0 +1,53 @@
+/* Course-Overview-Font: DM Sans (geladen via Google Fonts in index.html).
+   Single source of truth ist die CSS-Variable --font-overview in index.css —
+   Font-Wechsel ist damit eine Ein-Wert-Änderung. */
+.course-overview-node {
+  font-family: var(--font-overview) !important;
+}
+
+/* FUNKTIONIERENDE KONFIGURATION AUS ALTER VERSION */
+/* Alle Regeln werden auf .course-overview-canvas gescoped, damit sie
+   nicht auf andere Ansichten (z. B. HomeFlowCanvas) leaken. */
+
+.course-overview-canvas .react-flow__pane {
+  touch-action: manipulation !important;
+  pointer-events: auto !important;
+}
+
+.course-overview-canvas .react-flow__viewport {
+  touch-action: manipulation !important;
+}
+
+.course-overview-canvas .react-flow__node {
+  touch-action: manipulation !important;
+}
+
+/* Universelle Lösung: Alle Nodes transparent für Touch-Events machen */
+.course-overview-canvas .react-flow__node {
+  pointer-events: none !important;
+  touch-action: none !important;
+}
+
+.course-overview-canvas .react-flow__node * {
+  pointer-events: none !important;
+  touch-action: none !important;
+}
+
+/* Default: Alle Nodes sind drag-durchlaessig (kein pointer-events).
+   Eine Node wird nur dann klickbar, wenn sie explizit die Klasse
+   `lerneinheit-clickable` traegt — gesetzt im Node-Config via
+   `className: 'lerneinheit-clickable'`. */
+.course-overview-canvas .react-flow__node.lerneinheit-clickable,
+.course-overview-canvas .react-flow__node.lerneinheit-clickable * {
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+}
+
+.course-overview-canvas.react-flow,
+.course-overview-canvas .react-flow {
+  touch-action: manipulation !important;
+}
+
+/* Touch-Gesten sind bereits oben definiert */
+
+

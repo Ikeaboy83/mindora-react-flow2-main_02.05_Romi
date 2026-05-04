@@ -1,0 +1,26 @@
+.calendar-icon-node {
+  width: 10000px;
+  height: 10000px;
+  border-radius: 50%;
+  background: #2B7FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  position: relative;
+  overflow: hidden;
+  animation: calendar-pulse 1.8s ease-in-out infinite;
+}
+
+
+.calendar-icon {
+  width: 6760px;
+  height: 6760px;
+  z-index: 1;
+}
+
+
+@keyframes calendar-pulse {
+  0%, 100% { filter: brightness(1.2); }
+  50%      { filter: brightness(0.8); }
+}
